@@ -1,4 +1,4 @@
-def maximum_tas(t):
+def maximum(t):
     # Retourne l'élément du tas ayant la clé maximale.
     # Le maximum est toujours à l'indice 0 dans un tas max.
    
@@ -6,7 +6,7 @@ def maximum_tas(t):
         raise IndexError("Le tas est vide.")
     return t[0]
 
-def extraire_max_tas(t):
+def extraire_max(t):
     # Supprime et retourne l'élément du tas ayant la clé maximale.
     
     if len(t) == 0:
@@ -19,7 +19,7 @@ def extraire_max_tas(t):
     tas_maxifier(t, 0)  # Rééquilibrer le tas
     return max_element
 
-def augmenter_clé_tas(t, i, cle):
+def augmenter_cle(t, i, cle):
     # Accroît la valeur de l'élément d'indice i à la nouvelle valeur 'cle'.
     # La nouvelle clé doit être plus grande que l'ancienne.
 
@@ -35,11 +35,11 @@ def augmenter_clé_tas(t, i, cle):
         t[i], t[parent] = t[parent], t[i]
         i = parent
 
-def insérer_tas_max(t, cle):
+def insérer(t, cle):
     # Insère un nouvel élément dans le tas.
 
     t.append(float('-inf'))  # Ajouter une valeur très petite pour permettre l'augmentation
-    augmenter_clé_tas(t, len(t) - 1, cle)
+    augmenter_cle(t, len(t) - 1, cle)
 
 def tas_maxifier(t, i):
     # Maintient la propriété du tas max en partant de l'indice i.
